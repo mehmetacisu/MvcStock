@@ -1,6 +1,6 @@
 Projenin amacı, basit bir stok takip uygulamasıyla MVC yapısını öğrenerek proje geliştirmek.
 
-Frontend : Bootstrap
+<p>Frontend : Bootstrap<p>
 Backend  : .NET MVC5
 Database : MSSQL
 ORM : Entity Framework 6
