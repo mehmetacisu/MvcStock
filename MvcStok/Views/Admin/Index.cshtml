@@ -1,0 +1,35 @@
+﻿@model MvcStok.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "Admin Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a href="#myModal" role="button" class="btn btn-primary mt-2" data-bs-toggle="modal">Admin Eklemek için tıklayın</a>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Admin Ekleme Paneli</h2>
+            </div>
+            <form method="post" action="/Admin/Ekle">
+                <div class="modal-body">
+                    <label>
+                        Kullanıcı Adı
+                    </label>
+                    @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Şifre
+                    </label>
+                    @Html.TextBoxFor(m => m.Sifre, new { @class = "form-control" })
+                    <br />
+                    <button type="submit" class="btn btn-info">Kaydet</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

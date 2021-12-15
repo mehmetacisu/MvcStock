@@ -1,0 +1,31 @@
+﻿@model MvcStok.Models.Entity.TblUrun
+
+@{
+    ViewBag.Title = "Yeni Ürün Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" class="form-group container-fluid">
+
+    <h1 class="text-center">Yeni Ürün Ekleme Formu</h1>
+
+    <label>Ürün Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <label>Marka</label>
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    <label>Stok</label>
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    <label>Alış Fiyatı</label>
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    <br />
+    <label>Satış Fiyatı</label>
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <br />
+    <label>Kategori</label>
+       @Html.DropDownListFor(x=>x.TblKategori.Id,(List<SelectListItem>)ViewBag.kategori,new {@class = "form-select" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

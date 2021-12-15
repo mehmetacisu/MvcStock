@@ -1,0 +1,43 @@
+﻿@using MvcStok.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblMusteri>
+@{
+    ViewBag.Title = "Müşteri Anasayfa";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered mt-2">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Bakiye</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var musteri in Model)
+    {
+        <tr>
+            <td>@musteri.Id</td>
+            <td>@musteri.Ad</td>
+            <td>@musteri.Soyad</td>
+            <td>@musteri.Sehir</td>
+            <td>@musteri.Bakiye</td>
+            <td>
+                <a href="/Musteri/MusteriSil/@musteri.Id" class="btn btn-danger">Sil</a>
+                <a href="/Musteri/MusteriGetir/@musteri.Id" class="btn btn-warning">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+    LiElementClasses=new List<string>
+    {
+        "page-link"
+    }
+})
+<a href="/Musteri/YeniMusteri" class="btn btn-info">Müşteri Ekle</a>
+

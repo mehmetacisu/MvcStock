@@ -1,0 +1,33 @@
+﻿@using MvcStok.Models.Entity
+@model List<TblSatis>
+@{
+    ViewBag.Title = "Satış Anasayfa";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered mt-2">
+    <tr>
+        <th>Id</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Müşteri</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    <tbody>
+        @foreach (var sts in Model)
+        {
+            <tr>
+                <td>@sts.Id</td>
+                <td>@sts.TblUrun.Ad</td>
+                <td>@sts.TblPersonel.Ad @sts.TblPersonel.Soyad</td>
+                <td>@sts.TblMusteri.Ad @sts.TblMusteri.Soyad</td>
+                <td>@sts.Fiyat</td>
+                <td>@sts.Tarih</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="/Satis/YeniSatis">Satış Yap</a>
+

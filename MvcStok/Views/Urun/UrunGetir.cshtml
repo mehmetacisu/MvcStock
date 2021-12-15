@@ -1,0 +1,27 @@
+﻿@model MvcStok.Models.Entity.TblUrun
+
+@{
+    ViewBag.Title = "Ürün Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    <h2>Ürün Güncelleme</h2>
+    @Html.HiddenFor(x => x.Id)
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.DropDownListFor(x => x.TblKategori.Id,(List<SelectListItem>)ViewBag.urunktg, new { @class = "form-select" })
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+}

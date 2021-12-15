@@ -1,0 +1,44 @@
+﻿@using MvcStok.Models.Entity
+@model List<TblUrun>
+@{
+    ViewBag.Title = "Ürün Anasayfa";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+{
+       <p class="mt-2">
+           Ürün Adı : @Html.TextBox("ara")
+           <input type="submit" value="Ara"/>
+       </p>
+}
+<table class="table table-bordered mt-2">
+    <tr>
+        <td>Id</td>
+        <td>Ad</td>
+        <td>Marka</td>
+        <td>Stok</td>
+        <td>Alış Fiyatı</td>
+        <td>Satış Fiyatı</td>
+        <td>Kategorisi</td>
+        <td>İşlemler</td>
+    </tr>
+    @foreach (var urun in Model)
+    {
+        <tr>
+            <td>@urun.Id</td>
+            <td>@urun.Ad</td>
+            <td>@urun.Marka</td>
+            <td>@urun.Stok</td>
+            <td>@urun.AlisFiyat</td>
+            <td>@urun.SatisFiyat</td>
+            <td>@urun.TblKategori.Ad</td>
+            <td>
+                <a href="/Urun/UrunSil/@urun.Id" class="btn btn-danger">Sil</a>
+                <a href="/Urun/UrunGetir/@urun.Id" class="btn btn-warning">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Urun/YeniUrun" class="btn btn-info">Ürün Ekle</a>
+
+
