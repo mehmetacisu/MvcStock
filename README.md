@@ -6,4 +6,4 @@ Projenin amacı, basit bir stok takip uygulamasıyla MVC yapısını öğrenerek
 <p>ORM : Entity Framework 6</p>
 
 Projeye <a href="https://www.udemy.com/course/mvc5-ile-sifirdan-adim-adim-web-projesi-gelistirme/" >buradan</a>
-Sertifikama ise <a href="https://www.udemy.com/certificate/UC-8ee1c1e3-f059-417c-9d1e-265025739257/">buradan </a> ulaşabilirsiniz.
+sertifikama ise <a href="https://www.udemy.com/certificate/UC-8ee1c1e3-f059-417c-9d1e-265025739257/">buradan </a> ulaşabilirsiniz.
